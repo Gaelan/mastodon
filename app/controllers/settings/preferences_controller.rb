@@ -47,6 +47,7 @@ class Settings::PreferencesController < Settings::BaseController
       :setting_system_font_ui,
       :setting_noindex,
       :setting_theme,
+      :setting_dark_theme,
       :setting_aggregate_reblogs,
       :setting_show_application,
       :setting_advanced_layout,

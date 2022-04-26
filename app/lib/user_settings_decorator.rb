@@ -31,6 +31,7 @@ class UserSettingsDecorator
     user.settings['system_font_ui']      = system_font_ui_preference if change?('setting_system_font_ui')
     user.settings['noindex']             = noindex_preference if change?('setting_noindex')
     user.settings['theme']               = theme_preference if change?('setting_theme')
+    user.settings['dark_theme']          = dark_theme_preference if change?('setting_dark_theme')
     user.settings['aggregate_reblogs']   = aggregate_reblogs_preference if change?('setting_aggregate_reblogs')
     user.settings['show_application']    = show_application_preference if change?('setting_show_application')
     user.settings['advanced_layout']     = advanced_layout_preference if change?('setting_advanced_layout')
@@ -103,6 +104,10 @@ class UserSettingsDecorator
 
   def theme_preference
     settings['setting_theme']
+  end
+
+  def dark_theme_preference
+    settings['setting_dark_theme']
   end
 
   def default_language_preference

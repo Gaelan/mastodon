@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_account
   helper_method :current_session
   helper_method :current_theme
+  helper_method :current_dark_theme
   helper_method :single_user_mode?
   helper_method :use_seamless_external_login?
   helper_method :whitelist_mode?
@@ -137,6 +138,11 @@ class ApplicationController < ActionController::Base
   def current_theme
     return Setting.theme unless Themes.instance.names.include? current_user&.setting_theme
     current_user.setting_theme
+  end
+
+  def current_dark_theme
+    return nil unless Themes.instance.names.include? current_user&.setting_dark_theme
+    current_user.setting_dark_theme
   end
 
   def respond_with_error(code)
